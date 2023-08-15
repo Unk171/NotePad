@@ -41,10 +41,7 @@ app.post('/api/notes', (req, res) => {
         fs.writeFile(
           './db/db.json',
           JSON.stringify(parsedNotes, null, 4),
-          (writeErr) =>
-            writeErr
-              ? console.error(writeErr)
-              : console.info('Successfully updated notes!')
+          (writeErr) => writeErr ? console.error(writeErr) : console.info('Notes updated successfully!')
         );
       }
     });
